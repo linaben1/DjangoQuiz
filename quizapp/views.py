@@ -63,7 +63,7 @@ def Image_Table(request):
 
     all_info = image.objects.all()
     myFilter = imageFilter()
-    fil = request.GET.get('filter') 
+    fil = request.GET.get('filter')
     print(fil)
 
     if fil != '' and fil is not None:
@@ -100,7 +100,6 @@ def quiz_micro(request):
         list_image.append(img[random.randint(0,len(img)-1)].name)
 
     #request pour recuperer la réponse
-    # via une requete POST du bouton avec le name = "system"
     system = request.POST.get('system', None)
 
     #Test du score

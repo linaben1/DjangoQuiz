@@ -18,6 +18,7 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
@@ -27,7 +28,7 @@ SECRET_KEY = '6$ta#%d36u69$k$jl2-qu6wpjn=t#3=2x!cst-30@=0g5j&0^-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*','127.0.0.1']
+ALLOWED_HOSTS = ['*','127.0.0.1',"quiz-microscopy.herokuapp.com"]
 
 
 # Application definition
@@ -39,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'quizapp', #Mon application
+    'quizapp', #mon application
     'crispy_forms', #Gestion des formulaires
     'django_filters' # Filtres pour l'affichage
     ]
@@ -133,3 +134,4 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_URL = '/login'
 LOGIN_REDIRECT_URL = '/user_home'
+
