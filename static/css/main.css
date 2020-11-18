@@ -1,0 +1,15 @@
+
+
+
+
+.list_element{
+display:flex;
+flex-direction: row ;
+justify-content: flex-start;
+background-color:grey;
+flex-wrap: nowrap;
+text-align:left;
+margin-top:10px;
+max-width: 940px;
+margin:5px;
+}

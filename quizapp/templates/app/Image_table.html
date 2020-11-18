@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% block title %} Quiz Microscopy {% endblock title %}
+
+{% block content %}
+
+{% load static %}
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<!-- pour charger l'image -->
+{% get_static_prefix as STATIC_PREFIX %}
+
+
+<div class="container">
+  <h2>Filterable Table</h2>
+  <p>Type something in the input field to search the table for first names, last names or emails:</p>
+  <input class="form-control" id="myInput" type="text" placeholder="Search..">
+  <br>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Image</th>
+        <th scope="col">Name</th>
+        <th scope="col">Microscopy</th>
+        <th scope="col">Cell Type</th>
+        <th scope="col">Compartment</th>
+        <th scope="col">Organism</th>
+        <th scope="col">Description</th>
+        <th scope="col">DOI</th>
+      </tr>
+    </thead>
+    <tbody id="myTable">
+      {%  for image in all  %}
+      <tr>
+        <td> <img src=" {{ STATIC_PREFIX }}img/img_db/{{image.name}}.jpg " alt="" class="img-thumbnail"> </td>
+        <td>{{ image.name }}</td>
+        <td>{{ image.mode }}</td>
+        <td>{{ image.celltype }}</td>
+        <td>{{ image.componenet }}</td>
+        <td>{{ image.organism }}</td>
+        <td>{{ image.describtion }}</td>
+        <td>{{ image.doi }}</td>
+      </tr>
+      {%  endfor %}
+
+    </tbody>
+  </table>
+
+  
+</div>
+
+
+
+
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
+
+{% endblock content %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %} Quiz Microscopy {% endblock title %}
+
+{% block content %}
+{% load static %}
+{% get_static_prefix as STATIC_PREFIX %}
+
+
+    <section id="section-jumbotron" class="jumbotron jumbotron-fluid d-flex justify-content-center align-items-center">
+      <div class="container text-center">
+        <h1 class="display-1 text-info">Quiz Microscopy</h1>
+        <img src=" {{ STATIC_PREFIX }}img/image_quiz.png" alt="" class="img-fluid" alt="Responsive image" style="width:550px;">
+        <p class="lead">Commencer maintenant</p>
+
+        {% if not request.user.is_active %}
+
+        <p class="lead">Inscrivez vous si ce n'est pas encore fait et accedez a des dixaines de Quiz interessants</p>
+
+        <a href="{% url 'register' %}" class="btn btn-lg btn-info mt-1"><i class="fa fa-user-plus" aria-hidden="true"></i> S'inscrire</a>
+
+        {% else %}
+        <a href="{% url 'user_home' %}" class="btn btn-lg btn-info mt-1">Commencer</a>
+
+        {% endif %}
+      </div>
+    </section>
+
+{% endblock content %}
