@@ -16,7 +16,6 @@ import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 
 # Quick-start development settings - unsuitable for production
@@ -28,7 +27,7 @@ SECRET_KEY = '6$ta#%d36u69$k$jl2-qu6wpjn=t#3=2x!cst-30@=0g5j&0^-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*','127.0.0.1']
 
 
 # Application definition
