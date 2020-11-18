@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'quizapp', #mon application
+    'quizapp', #Mon application
     'crispy_forms', #Gestion des formulaires
     'django_filters' # Filtres pour l'affichage
     ]

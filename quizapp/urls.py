@@ -6,11 +6,11 @@ from . import views
 
 urlpatterns = [
     path('', views.home, name='home'),
-    path('home/', views.home, name='home'),
-    path('login/', views.login_view, name='login'),
-    path('register/', views.register, name='register'),
-    path('user_home/', views.user_home,name='user_home'),
-    url(r'^logout/', views.logout_view, name='logout'),
+    path('home/', views.home, name='home'),	#page d'accueil
+    path('login/', views.login_view, name='login'),	#page pour s'authentifier
+    path('register/', views.register, name='register'),	#page pour s'inscrire
+    path('user_home/', views.user_home,name='user_home'),	#page d'accueil de user
+    url(r'^logout/', views.logout_view, name='logout'),	
     path('image_table/', views.Image_Table, name='image_table'),
     path('image_galery/', views.image_galery, name='image_galery'),
     path('quiz_micro/', views.quiz_micro, name='quiz_micro'),

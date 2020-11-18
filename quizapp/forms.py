@@ -6,7 +6,7 @@ from django.utils.translation import gettext as _
 
 
 User = get_user_model()
-
+#Authentification
 class UserLoginForm(forms.Form):
     username = forms.CharField()
     password = forms.CharField(widget=forms.PasswordInput)
@@ -25,7 +25,7 @@ class UserLoginForm(forms.Form):
                 raise forms.ValidationError("Cette utilisateur n'est pas actif")
         return super(UserLoginForm, self).clean(*args, **kwargs)
 
-
+#Inscription 
 class RegistrationForm(UserCreationForm):
     email = forms.EmailField(required=True)
     first_name = forms.CharField(required=True)
