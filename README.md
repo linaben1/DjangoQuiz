@@ -28,7 +28,7 @@ https://docs.conda.io/en/latest/miniconda.html
 
     Activer l'environnement conda avec : conda activate djangoenv
 
-    Se placer à la racine du projet (dans le dossier DjangoQuiz-master/Quiz)
+    Se placer à la racine du projet (dans le dossier /DjangoQuiz-master)
 
     lancer la commande : pip install -r requirements.txt (pour installer toute les dependances)
 
